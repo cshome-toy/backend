@@ -35,6 +35,8 @@
 
 *ex2) fix(Board): 게시판 조회 가능 권한 수정*
 
+---
+
 ### Branch Convention
 
 | 타입 | 설명 |
@@ -53,12 +55,15 @@
 
 *ex2) fix/#43*
 
+---
 
 ### Issue Convention
 
 이슈명은 간결하되 어떤 작업인지 알 수 있도록 적는다.
 
 내용에는 이슈 내용과, 작업 리스트를 간결하게 적는다.
+
+---
 
 ### PR Convention
 
