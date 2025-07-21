@@ -7,3 +7,6 @@ spring:
     url: jdbc:mysql://mysql:3306/mydb?useSSL=false&serverTimezone=Asia/Seoul
     username: user
     password: password
+
+jwt:
+  secret: K8dP3xH4b2Q7t9V6mZ1oX5sA0jL4uN8fR2cW7vY3pE9kT1hG
