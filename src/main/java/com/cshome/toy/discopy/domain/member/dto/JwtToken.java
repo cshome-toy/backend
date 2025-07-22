@@ -1,4 +1,4 @@
-package com.cshome.toy.discopy.dto.member;
+package com.cshome.toy.discopy.domain.member.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

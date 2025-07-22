@@ -1,4 +1,4 @@
-package com.cshome.toy.discopy.domain.member.dto;
+package com.cshome.toy.discopy.security;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
