@@ -7,6 +7,7 @@ import lombok.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@Builder
 public class Member {
 
     @Id
@@ -18,7 +19,4 @@ public class Member {
     private String email;
 
     private String password;
-
-
-
 }
