@@ -1,13 +1,12 @@
 package com.cshome.toy.discopy.domain.member;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 public class Member {
 
     @Id
@@ -20,10 +19,6 @@ public class Member {
 
     private String password;
 
-    @Builder
-    public Member(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
+
 
 }

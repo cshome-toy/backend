@@ -1,4 +1,4 @@
-package com.cshome.toy.discopy.repository;
+package com.cshome.toy.discopy.domain.member.repository;
 
 import com.cshome.toy.discopy.domain.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
