@@ -13,10 +13,11 @@ import lombok.NoArgsConstructor;
 public class SignUpDto {
     private String email;
     private String password;
-
+    private String name;
     public Member toEntity(String encodePassword) {
         return Member.builder()
                 .email(email)
+                .name(name)
                 .password(encodePassword)
                 .build();
     }

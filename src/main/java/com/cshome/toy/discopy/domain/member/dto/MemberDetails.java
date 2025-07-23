@@ -15,12 +15,14 @@ public class MemberDetails implements UserDetails {
     private final Long id;
     private final String email;
     private final String password;
+    private final String name;
     private final List<? extends GrantedAuthority> authorities;
 
     public MemberDetails(Member member) {
         this.id = member.getId();
         this.email = member.getEmail();
         this.password = member.getPassword();
+        this.name = member.getName();
         this.authorities = List.of(() -> "ROLE_MEMBER");
     }
 
