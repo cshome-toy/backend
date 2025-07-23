@@ -3,6 +3,8 @@ package com.cshome.toy.discopy.domain.member.dto;
 import com.cshome.toy.discopy.domain.member.Member;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Getter
 @ToString
 @AllArgsConstructor
@@ -13,14 +15,18 @@ public class MemberDto {
     private Long id;
     private String email;
     private String password;
-    private String name;
+    private LocalDate birthday;
+    private String nickname;
+    private String username;
 
     static public MemberDto toDto(Member member) {
         return MemberDto.builder()
                 .id(member.getId())
                 .email(member.getEmail())
                 .password(member.getPassword())
-                .name(member.getName())
+                .nickname(member.getNickname())
+                .birthday(member.getBirthday())
+                .username(member.getUsername())
                 .build();
     }
     public Member toEntity() {
@@ -28,7 +34,9 @@ public class MemberDto {
                 .id(id)
                 .email(email)
                 .password(password)
-                .name(name)
+                .nickname(nickname)
+                .birthday(birthday)
+                .username(username)
                 .build();
     }
 }

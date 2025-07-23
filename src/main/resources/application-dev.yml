@@ -9,4 +9,5 @@ spring:
     password: password
 
 jwt:
-  secret: q0lD+q8c9FArv3Ht1XG1MPnY0GjMRn0jVt9mCln9EclZdfXc7fLOhM5U8H8K6U5qQBr8Qm/JyB8VfdyhxXYuNA==
+  secret: ${JWT_SECRET}
+  expiration-ms: ${JWT_EXPIRATION_MS}

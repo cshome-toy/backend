@@ -25,7 +25,7 @@ services:
       - mysql
     environment:
       SPRING_PROFILES_ACTIVE: dev
-      JWT_SECRET: dev_secret_Key
+      JWT_SECRET: q0lD+q8c9FArv3Ht1XG1MPnY0GjMRn0jVt9mCln9EclZdfXc7fLOhM5U8H8K6U5qQBr8Qm/JyB8VfdyhxXYuNA==
       JWT_EXPIRATION_MS: 86400000
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb?useSSL=false&serverTimezone=Asia/Seoul
       SPRING_DATASOURCE_USERNAME: user
