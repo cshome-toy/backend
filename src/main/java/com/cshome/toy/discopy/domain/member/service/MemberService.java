@@ -3,6 +3,7 @@ package com.cshome.toy.discopy.domain.member.service;
 import com.cshome.toy.discopy.domain.member.dto.JwtToken;
 
 import com.cshome.toy.discopy.domain.member.dto.MemberDto;
+import com.cshome.toy.discopy.domain.member.dto.SignInDto;
 import com.cshome.toy.discopy.domain.member.dto.SignUpDto;
 import com.cshome.toy.discopy.domain.member.repository.MemberRepository;
 import com.cshome.toy.discopy.security.JwtTokenProvider;
@@ -26,14 +27,18 @@ public class MemberService {
     private final PasswordEncoder passwordEncoder;
 
     @Transactional
-    public JwtToken signIn(String username,String password){
+    public JwtToken signIn(SignInDto signInDto) {
+        log.info("signIn email: {} password: {}", signInDto.getEmail(), signInDto.getPassword());
         UsernamePasswordAuthenticationToken authenticationToken =
-                new UsernamePasswordAuthenticationToken(username, password);
-
+                new UsernamePasswordAuthenticationToken(signInDto.getEmail(), signInDto.getPassword());
         Authentication authentication =
                 authenticationManagerBuilder.getObject().authenticate(authenticationToken);
 
         JwtToken jwtToken = jwtTokenProvider.generateToken(authentication);
+
+        log.info("jwtToken accessToken: {}, refreshToken: {}",
+                jwtToken.getAccessToken(), jwtToken.getRefreshToken());
+
 
         return jwtToken;
 

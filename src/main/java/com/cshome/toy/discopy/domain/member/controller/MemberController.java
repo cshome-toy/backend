@@ -23,12 +23,8 @@ public class MemberController {
 
     @PostMapping("/sign-in")
     public JwtToken signIn(@RequestBody SignInDto signInDto) {
-        String email = signInDto.getEmail();
-        String password = signInDto.getPassword();
-        JwtToken jwtToken = memberService.signIn(email, password);
-        log.info("signIn email: {} password: {}", email, password);
-        log.info("jwtToken accessToken: {}, refreshToken: {}",
-                jwtToken.getAccessToken(), jwtToken.getRefreshToken());
+
+        JwtToken jwtToken = memberService.signIn(signInDto);
         return jwtToken;
     }
     @PostMapping("sign-up")
