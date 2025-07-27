@@ -15,9 +15,6 @@ import java.time.LocalDate;
 @Builder
 public class MemberInfoDto {
 
-    @Schema(description = "사용자 아이디",example = "1")
-    private Long id;
-
     @Schema(description = "사용자 이메일 작성",example = "test@email.com")
     private String email;
 
@@ -32,7 +29,6 @@ public class MemberInfoDto {
 
     public static MemberInfoDto toMemberInfoDto(Member member) {
         return MemberInfoDto.builder()
-                .id(member.getId())
                 .email(member.getEmail())
                 .birthday(member.getBirthday())
                 .nickname(member.getNickname())
