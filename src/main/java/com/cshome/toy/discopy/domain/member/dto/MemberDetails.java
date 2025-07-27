@@ -30,7 +30,7 @@
             this.nickname = member.getNickname();
             this.birthday = member.getBirthday();
             this.name = member.getUsername();
-            this.authorities = List.of(() -> "ROLE_MEMBER");
+            this.authorities = List.of(() -> "ROLE_USER");
         }
 
         @Override

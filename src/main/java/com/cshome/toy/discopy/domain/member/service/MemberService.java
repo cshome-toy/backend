@@ -33,7 +33,10 @@ public class MemberService {
         Authentication authentication =
                 authenticationManagerBuilder.getObject().authenticate(authenticationToken);
 
-        JwtToken jwtToken = jwtTokenProvider.generateToken(authentication);
+        MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
+        Long memberId = memberDetails.getId();
+
+        JwtToken jwtToken = jwtTokenProvider.generateToken(memberId,authentication.getAuthorities());
 
         log.info("jwtToken accessToken: {}, refreshToken: {}",
                 jwtToken.getAccessToken(), jwtToken.getRefreshToken());
@@ -54,8 +57,8 @@ public class MemberService {
     }
 
     public MemberInfoDto getCurrentMember() {
-        String email = SecurityUtil.getCurrentUserEmail();
-        Member member = memberRepository.findByEmail(email)
+        Long memberId = SecurityUtil.getCurrentUserId();
+        Member member = memberRepository.findById(memberId)
                 .orElseThrow(()->new IllegalArgumentException("해당 회원 찾을 수 없습니다."));
         return MemberInfoDto.toMemberInfoDto(member);
     }

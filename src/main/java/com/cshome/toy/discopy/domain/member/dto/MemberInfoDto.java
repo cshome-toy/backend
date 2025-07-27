@@ -14,7 +14,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class MemberInfoDto {
-    @Schema(description = "사용자 이메일 작성",nullable = false,example = "test@email.com")
+
+    @Schema(description = "사용자 이메일 작성",example = "test@email.com")
     private String email;
 
     @Schema(description = "사용자 생년원일",example = "2002-01-01")
@@ -23,7 +24,7 @@ public class MemberInfoDto {
     @Schema(description = "사용자 별명",example = "꼬북이",nullable = true)
     private String nickname;
 
-    @Schema(description = "사용자 이름",nullable = false,example = "홍길동")
+    @Schema(description = "사용자 이름",example = "홍길동")
     private String username;
 
     public static MemberInfoDto toMemberInfoDto(Member member) {
