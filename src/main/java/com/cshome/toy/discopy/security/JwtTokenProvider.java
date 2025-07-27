@@ -36,9 +36,9 @@ public class JwtTokenProvider {
         this.key = Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public JwtToken generateToken(Authentication authentication) {
+    public JwtToken generateToken(Long userId, Collection<? extends GrantedAuthority> authorities) {
         // 권한 가져오기
-        String authorities = authentication.getAuthorities().stream()
+        String roles = authorities.stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(","));
 
@@ -47,8 +47,8 @@ public class JwtTokenProvider {
         // Access Token 생성
         Date accessTokenExpiresIn = new Date(now + ACCESS_TOKEN_EXPIRE_TIME);
         String accessToken = Jwts.builder()
-                .setSubject(authentication.getName())
-                .claim(AUTHORITIES_KEY, authorities)
+                .setSubject(String.valueOf(userId))
+                .claim(AUTHORITIES_KEY, roles)
                 .setExpiration(accessTokenExpiresIn)
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
