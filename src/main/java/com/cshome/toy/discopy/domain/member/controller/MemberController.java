@@ -1,7 +1,6 @@
 package com.cshome.toy.discopy.domain.member.controller;
 
 import com.cshome.toy.discopy.domain.member.dto.*;
-import com.cshome.toy.discopy.domain.member.entity.Member;
 import com.cshome.toy.discopy.domain.member.service.MemberService;
 import com.cshome.toy.discopy.global.provider.LoginMemberProvider;
 import io.swagger.v3.oas.annotations.Operation;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/members")
+@RequestMapping("/api/v1/members")
 @Tag(name = "멤버 API", description = "회원 로그인/가입/조회 API")
 public class MemberController {
     private final MemberService memberService;
@@ -34,7 +33,7 @@ public class MemberController {
             summary = "회원가입 API",
             description = "email, password, username, nickname, birthday을 받아 회원을 등록합니다."
     )
-    @PostMapping("sign-up")
+    @PostMapping("/sign-up")
     public ResponseEntity<MemberDto> signUp(@RequestBody SignUpDto signUpDto) {
         MemberDto memberDto = memberService.signUp(signUpDto);
         return ResponseEntity.ok(memberDto);
