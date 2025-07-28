@@ -1,6 +1,7 @@
-package com.cshome.toy.discopy.security;
+package com.cshome.toy.discopy.global.filter;
 
 
+import com.cshome.toy.discopy.global.provider.JwtTokenProvider;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;

@@ -1,9 +1,8 @@
-package com.cshome.toy.discopy.config;
+package com.cshome.toy.discopy.global.config;
 
 
-import com.cshome.toy.discopy.security.JwtAuthenticationFilter;
-import com.cshome.toy.discopy.security.JwtTokenProvider;
-import jakarta.validation.constraints.NotNull;
+import com.cshome.toy.discopy.global.filter.JwtAuthenticationFilter;
+import com.cshome.toy.discopy.global.provider.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

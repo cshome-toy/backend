@@ -1,11 +1,11 @@
 package com.cshome.toy.discopy.domain.member.service;
 
-import com.cshome.toy.discopy.domain.member.Member;
+import com.cshome.toy.discopy.domain.member.entity.Member;
 import com.cshome.toy.discopy.domain.member.dto.*;
 
 import com.cshome.toy.discopy.domain.member.repository.MemberRepository;
-import com.cshome.toy.discopy.security.JwtTokenProvider;
-import com.cshome.toy.discopy.security.SecurityUtil;
+import com.cshome.toy.discopy.global.provider.JwtTokenProvider;
+import com.cshome.toy.discopy.global.util.SecurityUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -56,11 +56,10 @@ public class MemberService {
         return MemberDto.toDto(memberRepository.save(signUpDto.toEntity(encodedPassword)));
     }
 
-    public MemberInfoDto getCurrentMember() {
+    public Member getCurrentMember() {
         Long memberId = SecurityUtil.getCurrentUserId();
-        Member member = memberRepository.findById(memberId)
+        return memberRepository.findById(memberId)
                 .orElseThrow(()->new IllegalArgumentException("해당 회원 찾을 수 없습니다."));
-        return MemberInfoDto.toMemberInfoDto(member);
     }
 
 

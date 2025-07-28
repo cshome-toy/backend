@@ -1,4 +1,4 @@
-package com.cshome.toy.discopy.security;
+package com.cshome.toy.discopy.global.provider;
 
 import com.cshome.toy.discopy.domain.member.dto.JwtToken;
 import io.jsonwebtoken.*;

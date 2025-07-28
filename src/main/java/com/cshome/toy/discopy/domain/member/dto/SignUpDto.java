@@ -1,6 +1,6 @@
 package com.cshome.toy.discopy.domain.member.dto;
 
-import com.cshome.toy.discopy.domain.member.Member;
+import com.cshome.toy.discopy.domain.member.entity.Member;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
