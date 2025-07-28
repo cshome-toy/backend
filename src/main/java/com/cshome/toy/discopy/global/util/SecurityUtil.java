@@ -1,4 +1,4 @@
-package com.cshome.toy.discopy.security;
+package com.cshome.toy.discopy.global.util;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

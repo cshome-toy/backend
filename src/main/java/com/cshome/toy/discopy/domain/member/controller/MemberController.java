@@ -1,8 +1,9 @@
 package com.cshome.toy.discopy.domain.member.controller;
 
 import com.cshome.toy.discopy.domain.member.dto.*;
-import com.cshome.toy.discopy.security.SecurityUtil;
+import com.cshome.toy.discopy.domain.member.entity.Member;
 import com.cshome.toy.discopy.domain.member.service.MemberService;
+import com.cshome.toy.discopy.global.provider.LoginMemberProvider;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "멤버 API", description = "회원 로그인/가입/조회 API")
 public class MemberController {
     private final MemberService memberService;
+    private final LoginMemberProvider loginMemberProvider;
 
     @Operation(
             summary = "로그인 API",
@@ -44,7 +46,7 @@ public class MemberController {
     )
     @GetMapping("/current-user")
     public ResponseEntity<MemberInfoDto> currentUser() {
-        MemberInfoDto memberDto = memberService.getCurrentMember();
+        MemberInfoDto memberDto = loginMemberProvider.getCurrentMemberInfoDto();
         return ResponseEntity.ok(memberDto);
     }
 

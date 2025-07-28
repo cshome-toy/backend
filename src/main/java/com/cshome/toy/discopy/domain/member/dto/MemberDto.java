@@ -1,6 +1,6 @@
 package com.cshome.toy.discopy.domain.member.dto;
 
-import com.cshome.toy.discopy.domain.member.Member;
+import com.cshome.toy.discopy.domain.member.entity.Member;
 import lombok.*;
 
 import java.time.LocalDate;
