@@ -55,12 +55,4 @@ public class MemberService {
         String encodedPassword = passwordEncoder.encode(signUpDto.getPassword());
         return MemberDto.toDto(memberRepository.save(signUpDto.toEntity(encodedPassword)));
     }
-
-    public Member getCurrentMember() {
-        Long memberId = SecurityUtil.getCurrentUserId();
-        return memberRepository.findById(memberId)
-                .orElseThrow(()->new IllegalArgumentException("해당 회원 찾을 수 없습니다."));
-    }
-
-
 }
