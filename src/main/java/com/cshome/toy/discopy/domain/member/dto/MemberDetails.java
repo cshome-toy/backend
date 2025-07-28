@@ -1,8 +1,6 @@
     package com.cshome.toy.discopy.domain.member.dto;
 
-    import com.cshome.toy.discopy.domain.member.Member;
-    import lombok.Builder;
-    import lombok.Data;
+    import com.cshome.toy.discopy.domain.member.entity.Member;
     import lombok.Getter;
     import lombok.extern.slf4j.Slf4j;
     import org.springframework.security.core.GrantedAuthority;

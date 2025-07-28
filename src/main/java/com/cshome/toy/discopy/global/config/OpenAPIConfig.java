@@ -1,4 +1,4 @@
-package com.cshome.toy.discopy.config;
+package com.cshome.toy.discopy.global.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

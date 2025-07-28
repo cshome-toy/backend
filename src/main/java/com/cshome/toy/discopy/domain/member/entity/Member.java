@@ -1,4 +1,4 @@
-package com.cshome.toy.discopy.domain.member;
+package com.cshome.toy.discopy.domain.member.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

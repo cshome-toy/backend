@@ -1,4 +1,4 @@
-package com.cshome.toy.discopy.config;
+package com.cshome.toy.discopy.global.config;
 
 import com.cshome.toy.discopy.global.handler.StompHandshakeInterceptor;
 import org.springframework.context.annotation.Configuration;
