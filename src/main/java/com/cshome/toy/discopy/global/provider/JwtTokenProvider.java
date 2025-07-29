@@ -36,6 +36,16 @@ public class JwtTokenProvider {
         this.key = Keys.hmacShaKeyFor(keyBytes);
     }
 
+    public Long getUserIdFromToken(String token) {
+        Claims claims = Jwts.parserBuilder()
+            .setSigningKey(key)
+            .build()
+            .parseClaimsJws(token)
+            .getBody();
+
+        return Long.parseLong(claims.getSubject());
+    }
+
     public JwtToken generateToken(Long userId, Collection<? extends GrantedAuthority> authorities) {
         // 권한 가져오기
         String roles = authorities.stream()
