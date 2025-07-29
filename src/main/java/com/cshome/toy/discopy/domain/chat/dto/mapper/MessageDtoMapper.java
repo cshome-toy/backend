@@ -3,13 +3,11 @@ package com.cshome.toy.discopy.domain.chat.dto.mapper;
 import com.cshome.toy.discopy.domain.chat.dto.response.MessageResponseDto;
 import com.cshome.toy.discopy.domain.chat.entity.Message;
 import com.cshome.toy.discopy.domain.member.entity.Member;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 @Component
-@RequiredArgsConstructor
 public class MessageDtoMapper {
 
     public MessageResponseDto toDto(Message message, Member sender) {

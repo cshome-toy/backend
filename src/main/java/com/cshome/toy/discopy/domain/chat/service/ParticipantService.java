@@ -1,20 +1,20 @@
 package com.cshome.toy.discopy.domain.chat.service;
 
-import com.cshome.toy.discopy.domain.chat.dto.request.JoinServerRequestDto;
 import com.cshome.toy.discopy.domain.chat.entity.Participant;
 import com.cshome.toy.discopy.domain.chat.repository.ParticipantRepository;
 import com.cshome.toy.discopy.domain.chat.repository.ServerRepository;
 import com.cshome.toy.discopy.domain.member.repository.MemberRepository;
-import com.cshome.toy.discopy.domain.member.service.MemberService;
 import com.cshome.toy.discopy.global.provider.LoginMemberProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class ParticipantService {
 
     private final ServerRepository serverRepository;

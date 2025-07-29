@@ -41,4 +41,12 @@ public class ServerController {
         List<RetrieveServerListDto> serverList = serverService.retrieveAllServer();
         return ResponseEntity.ok(serverList);
     }
+
+    @Operation(summary = "내 디스코드 서버 조회", description = "내가 들어가 있는 모든 디스코드 서버를 조회할 수 있습니다.")
+    @PreAuthorize("hasRole(('USER'))")
+    @GetMapping("/my")
+    public ResponseEntity<List<RetrieveServerListDto>> retrieveMyServerList() {
+        List<RetrieveServerListDto> serverList = serverService.retrieveMyServers();
+        return ResponseEntity.ok(serverList);
+    }
 }
