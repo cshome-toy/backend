@@ -37,8 +37,4 @@ public class Server {
 
     private String iconUrl;
 
-    @OneToMany(mappedBy = "server", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<Channel> channels = new ArrayList<>();
-
-
 }
