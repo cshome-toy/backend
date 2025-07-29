@@ -28,7 +28,7 @@ public class Channel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JoinColumn(name = "server_id")
+    @Column(nullable = false)
     private Long serverId;
 
     @Column(nullable = false)
