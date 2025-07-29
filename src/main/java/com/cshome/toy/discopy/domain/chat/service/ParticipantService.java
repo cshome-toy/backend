@@ -5,6 +5,8 @@ import com.cshome.toy.discopy.domain.chat.entity.Participant;
 import com.cshome.toy.discopy.domain.chat.repository.ParticipantRepository;
 import com.cshome.toy.discopy.domain.chat.repository.ServerRepository;
 import com.cshome.toy.discopy.domain.member.repository.MemberRepository;
+import com.cshome.toy.discopy.domain.member.service.MemberService;
+import com.cshome.toy.discopy.global.provider.LoginMemberProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +20,10 @@ public class ParticipantService {
     private final ServerRepository serverRepository;
     private final MemberRepository memberRepository;
     private final ParticipantRepository participantRepository;
+    private final LoginMemberProvider loginMemberProvider;
 
-    public void join(Long serverId, JoinServerRequestDto requestDto) {
-        Long memberId = requestDto.getMemberId();
+    public void join(Long serverId) {
+        Long memberId = loginMemberProvider.getCurrentUserId();
         if (participantRepository.existsByMemberIdAndServerId(memberId, serverId)) {
             throw new IllegalStateException("이미 참가한 서버입니다.");
         }
