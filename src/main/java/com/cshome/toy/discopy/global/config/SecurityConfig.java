@@ -44,8 +44,8 @@ public class SecurityConfig {
                                 "/webjars/**"
                         ).permitAll()
                         // 특정 API는 모든 요청 허용
-                        .requestMatchers("/members/sign-up").permitAll()
-                        .requestMatchers("/members/sign-in").permitAll()
+                        .requestMatchers("/api/v1/members/sign-up").permitAll()
+                        .requestMatchers("/api/v1/members/sign-in").permitAll()
                         // USER 권한 필요
                         //.requestMatchers("/members/test").hasRole("USER")
                         // 그 외 모든 요청 인증 필요
